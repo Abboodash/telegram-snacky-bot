@@ -3,12 +3,13 @@ import config from "./config";
 
 import fs from "fs";
 import path from "path";
+import * as cron from 'node-cron'
 
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN!);
 
 const now = new Date().getHours()
 
-if (now >= 17 && now < 18) {
+cron.schedule('* * 17 * * *', () => {
     const filePath = path.join('images', 'سناكات متاحة.png');
     fs.readFile(filePath, { encoding: 'utf-8' }, function (err, data) {
         if (!err) {
@@ -26,7 +27,9 @@ if (now >= 17 && now < 18) {
             can_send_photos: true,
             can_send_videos: true,
         })
-} else {
+});
+
+cron.schedule('* * 18 * * *', () => {
     bot.telegram.setChatPermissions(config.TELEGRAM_CHANNEL_ID,
         {
             can_send_messages: false,
@@ -35,7 +38,7 @@ if (now >= 17 && now < 18) {
             can_send_photos: false,
             can_send_videos: false,
         })
-}
+});
 
 bot.launch();
 

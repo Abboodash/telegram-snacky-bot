@@ -13,6 +13,7 @@
   "devDependencies": {
     "@types/node": "^18.15.10",
     "concurrently": "^7.6.0",
+    "node-cron": "^3.0.2",
     "nodemon": "^2.0.22",
     "typescript": "^5.0.2"
   },
