@@ -1,0 +1,23 @@
+{
+  "name": "telegram-channel-lock",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Abboodash",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"tsc -w\" \"nodemon\"",
+    "start": "node .",
+    "build": "concurrently \"rm -rf dist\" \"tsc\""
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "telegraf": "^4.12.2"
+  }
+}
