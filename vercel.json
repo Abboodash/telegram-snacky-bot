@@ -1,0 +1,17 @@
+{
+  "name": "telegram-snacky-bot",
+
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@now/node"
+    }
+  ],
+
+  "devCommand": "yarn run dev",
+  "buildCommand": "yarn run build",
+  "installCommand": "yarn",
+
+  "outputDirectory": "dist"
+}
